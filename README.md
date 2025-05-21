@@ -1,45 +1,47 @@
-Documentação Técnica - DataStructuresApp
-Esta documentação descreve a estrutura e o funcionamento do aplicativo DataStructuresApp, que é um projeto desenvolvido em C# para manipulação de estruturas de dados como vetores, matrizes, listas, filas, pilhas, e execução de algoritmos de pesquisa. O objetivo deste projeto é fornecer um menu interativo onde o usuário pode escolher entre diferentes operações para manipular essas estruturas de dados.
+# Documentação Técnica - DataStructuresApp
 
-Estrutura do Projeto
+Esta documentação descreve a estrutura e o funcionamento do **DataStructuresApp**, um projeto desenvolvido em **C#** para manipulação de **estruturas de dados** como vetores, matrizes, listas, filas, pilhas, e execução de **algoritmos de pesquisa**. O objetivo deste projeto é fornecer um **menu interativo** onde o usuário pode escolher entre diferentes operações para manipular essas estruturas de dados.
+
+## Estrutura do Projeto
+
 O projeto está organizado em dois principais namespaces:
 
-DataStructures: Contém as implementações de diferentes estruturas de dados, como Vetor, Matriz, Lista, Fila e Pilha.
+- **DataStructures**: Contém as implementações de diferentes estruturas de dados, como **Vetor**, **Matriz**, **Lista**, **Fila** e **Pilha**.
+- **Algorithms**: Contém os algoritmos de busca, como **busca sequencial** e **busca binária**, que podem ser aplicados nas estruturas de dados.
 
-Algorithms: Contém os algoritmos de busca (como busca sequencial e busca binária) que podem ser aplicados nas estruturas de dados.
+O código é modularizado, e cada estrutura de dados está em um arquivo separado dentro do diretório **DataStructures**. O diretório **Algorithms** contém os algoritmos de pesquisa, enquanto o arquivo **Program.cs** é responsável pela interação com o usuário e execução do menu principal.
 
-O código é modularizado, e cada estrutura de dados está em um arquivo separado dentro do diretório DataStructures. O diretório Algorithms contém os algoritmos de pesquisa, enquanto o arquivo Program.cs é responsável pela interação com o usuário e execução do menu principal.
+### Estrutura de Diretórios
 
-Estrutura de Diretórios
-nginx
-Copiar
-Editar
 DataStructuresApp
 ├── DataStructures
-│    ├── Vetor.cs
-│    ├── Matriz.cs
-│    ├── Lista.cs
-│    ├── Fila.cs
-│    └── Pilha.cs
+│ ├── Vetor.cs
+│ ├── Matriz.cs
+│ ├── Lista.cs
+│ ├── Fila.cs
+│ └── Pilha.cs
 ├── Algorithms
-│    └── Pesquisa.cs
+│ └── Pesquisa.cs
 └── Program.cs
-Descrição do Código
-1. Namespaces Usados
-System: Usado para manipulação de entrada e saída de dados, manipulação de console e exceções.
 
-DataStructures: Namespace que contém as classes para as estruturas de dados como Vetor, Matriz, Lista, Fila, e Pilha.
-
-Algorithms: Namespace que contém a classe Pesquisa que implementa os algoritmos de busca (sequencial e binária).
-
-System.Collections.Generic: Usado para trabalhar com coleções genéricas, como List<T>, que é usada na pesquisa.
-
-2. Main Loop e Menu Principal
-A função Main apresenta um menu principal com opções para o usuário escolher a operação que deseja realizar. Este menu é um loop contínuo até que o usuário selecione a opção de saída (0). Para cada opção selecionada, o sistema chama a função correspondente que gerencia as operações das estruturas de dados.
-
-csharp
+kotlin
 Copiar
 Editar
+
+## Descrição do Código
+
+### 1. Namespaces Usados
+
+- **System**: Usado para manipulação de entrada e saída de dados, manipulação de console e exceções.
+- **DataStructures**: Namespace que contém as classes para as estruturas de dados, como **Vetor**, **Matriz**, **Lista**, **Fila**, e **Pilha**.
+- **Algorithms**: Namespace que contém a classe **Pesquisa**, que implementa os algoritmos de busca (sequencial e binária).
+- **System.Collections.Generic**: Usado para trabalhar com coleções genéricas, como **List<T>**, que é utilizada nas pesquisas.
+
+### 2. Main Loop e Menu Principal
+
+A função **Main** apresenta um menu principal com opções para o usuário escolher a operação que deseja realizar. Este menu é um loop contínuo até que o usuário selecione a opção de saída (**0**). Para cada opção selecionada, o sistema chama a função correspondente que gerencia as operações das estruturas de dados.
+
+```csharp
 while (true)
 {
     Console.Clear();
@@ -83,7 +85,7 @@ while (true)
     }
 }
 3. Gerenciamento das Estruturas de Dados
-Para cada tipo de estrutura de dados (Vetor, Matriz, Lista, Fila, Pilha), existe uma função correspondente que apresenta um menu de operações disponíveis (Inserir Elemento, Remover Elemento, Exibir Elementos, Consultar Elemento). O fluxo de operações para cada estrutura segue o padrão abaixo:
+Para cada tipo de estrutura de dados (Vetor, Matriz, Lista, Fila, Pilha), existe uma função correspondente que apresenta um menu de operações disponíveis, como:
 
 Inserir Elemento: O usuário insere um valor para ser adicionado à estrutura.
 
@@ -93,8 +95,7 @@ Exibir Elementos: O sistema exibe todos os elementos presentes na estrutura.
 
 Consultar Elemento: O usuário insere um valor para consultar sua presença na estrutura.
 
-Exemplo de gerenciamento de vetor:
-
+Exemplo de Gerenciamento de Vetor:
 csharp
 Copiar
 Editar
@@ -142,12 +143,13 @@ private static void GerenciarVetor()
     } while (opcao != 0);
 }
 4. Algoritmos de Pesquisa
-Na opção 6 do menu principal, o usuário pode escolher entre realizar uma Busca Sequencial ou uma Busca Binária. Ambas as buscas são implementadas na classe Pesquisa que está no diretório Algorithms.
+Na opção 6 do menu principal, o usuário pode escolher entre realizar uma Busca Sequencial ou uma Busca Binária. Ambas as buscas são implementadas na classe Pesquisa, que está no diretório Algorithms.
 
-A busca sequencial percorre todos os elementos da lista até encontrar o item desejado, enquanto a busca binária só funciona em listas ordenadas e procura o item dividindo a lista ao meio.
+Busca Sequencial: Percorre todos os elementos da lista até encontrar o item desejado.
 
-Exemplo de implementação de busca sequencial:
+Busca Binária: Funciona apenas em listas ordenadas e busca o item dividindo a lista ao meio.
 
+Exemplo de Implementação de Busca Sequencial:
 csharp
 Copiar
 Editar
@@ -161,7 +163,7 @@ public static int BuscaSequencial(List<int> lista, int chave)
     return -1; // Retorna -1 se o elemento não for encontrado
 }
 5. Exemplo de Saída
-O sistema irá interagir com o usuário e, após a escolha de uma operação, retornará a saída correspondente. Por exemplo:
+O sistema interage com o usuário e, após a escolha de uma operação, retorna a saída correspondente. Por exemplo:
 
 markdown
 Copiar
@@ -184,7 +186,9 @@ Operações no Vetor:
 Digite o elemento a ser inserido: 10
 Pressione qualquer tecla para continuar...
 6. Exceções e Validação de Entradas
-O código atualmente não realiza validações avançadas sobre entradas erradas (como letras ou caracteres especiais em vez de números inteiros). Idealmente, as entradas devem ser tratadas para evitar falhas de execução.
+Atualmente, o código não realiza validações avançadas sobre entradas erradas, como letras ou caracteres especiais em vez de números inteiros. Idealmente, as entradas devem ser tratadas para evitar falhas de execução, tornando o sistema mais robusto.
 
 Conclusão
 Este aplicativo oferece uma interface simples e interativa para o gerenciamento de estruturas de dados em C#, possibilitando ao usuário realizar operações básicas sobre vetores, matrizes, listas, filas e pilhas, além de aplicar algoritmos de pesquisa.
+
+O projeto é uma ferramenta útil para estudar e praticar manipulação de estruturas de dados e algoritmos, podendo ser expandido com mais recursos no futuro.
