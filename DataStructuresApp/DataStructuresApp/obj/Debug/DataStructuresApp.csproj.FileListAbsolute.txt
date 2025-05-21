@@ -1,0 +1,7 @@
+C:\Users\Aluno\source\repos\DataStructuresApp\DataStructuresApp\obj\Debug\DataStructuresApp.csproj.AssemblyReference.cache
+C:\Users\Aluno\source\repos\DataStructuresApp\DataStructuresApp\obj\Debug\DataStructuresApp.csproj.CoreCompileInputs.cache
+C:\Users\Aluno\source\repos\DataStructuresApp\DataStructuresApp\bin\Debug\DataStructuresApp.exe.config
+C:\Users\Aluno\source\repos\DataStructuresApp\DataStructuresApp\bin\Debug\DataStructuresApp.exe
+C:\Users\Aluno\source\repos\DataStructuresApp\DataStructuresApp\bin\Debug\DataStructuresApp.pdb
+C:\Users\Aluno\source\repos\DataStructuresApp\DataStructuresApp\obj\Debug\DataStructuresApp.exe
+C:\Users\Aluno\source\repos\DataStructuresApp\DataStructuresApp\obj\Debug\DataStructuresApp.pdb
