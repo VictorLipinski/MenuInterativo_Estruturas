@@ -11,23 +11,6 @@ O projeto está organizado em dois principais namespaces:
 
 O código é modularizado, e cada estrutura de dados está em um arquivo separado dentro do diretório **DataStructures**. O diretório **Algorithms** contém os algoritmos de pesquisa, enquanto o arquivo **Program.cs** é responsável pela interação com o usuário e execução do menu principal.
 
-### Estrutura de Diretórios
-
-DataStructuresApp
-├── DataStructures
-│ ├── Vetor.cs
-│ ├── Matriz.cs
-│ ├── Lista.cs
-│ ├── Fila.cs
-│ └── Pilha.cs
-├── Algorithms
-│ └── Pesquisa.cs
-└── Program.cs
-
-kotlin
-Copiar
-Editar
-
 ## Descrição do Código
 
 ### 1. Namespaces Usados
@@ -41,7 +24,7 @@ Editar
 
 A função **Main** apresenta um menu principal com opções para o usuário escolher a operação que deseja realizar. Este menu é um loop contínuo até que o usuário selecione a opção de saída (**0**). Para cada opção selecionada, o sistema chama a função correspondente que gerencia as operações das estruturas de dados.
 
-```csharp
+
 while (true)
 {
     Console.Clear();
@@ -53,9 +36,7 @@ while (true)
     Console.WriteLine("5. Pilhas");
     Console.WriteLine("6. Algoritmos de Pesquisa");
     Console.WriteLine("0. Sair");
-
     int opcao = int.Parse(Console.ReadLine());
-
     switch (opcao)
     {
         case 1:
@@ -84,7 +65,9 @@ while (true)
             break;
     }
 }
-3. Gerenciamento das Estruturas de Dados
+
+
+### 3. Gerenciamento das Estruturas de Dados
 Para cada tipo de estrutura de dados (Vetor, Matriz, Lista, Fila, Pilha), existe uma função correspondente que apresenta um menu de operações disponíveis, como:
 
 Inserir Elemento: O usuário insere um valor para ser adicionado à estrutura.
@@ -96,9 +79,7 @@ Exibir Elementos: O sistema exibe todos os elementos presentes na estrutura.
 Consultar Elemento: O usuário insere um valor para consultar sua presença na estrutura.
 
 Exemplo de Gerenciamento de Vetor:
-csharp
-Copiar
-Editar
+
 private static void GerenciarVetor()
 {
     var vetor = new Vetor(5); // Criar um vetor de tamanho 5
@@ -113,7 +94,6 @@ private static void GerenciarVetor()
         Console.WriteLine("4. Consultar Elemento");
         Console.WriteLine("0. Voltar");
         opcao = int.Parse(Console.ReadLine());
-
         switch (opcao)
         {
             case 1:
@@ -142,7 +122,8 @@ private static void GerenciarVetor()
         Console.ReadKey();
     } while (opcao != 0);
 }
-4. Algoritmos de Pesquisa
+
+###  4. Algoritmos de Pesquisa
 Na opção 6 do menu principal, o usuário pode escolher entre realizar uma Busca Sequencial ou uma Busca Binária. Ambas as buscas são implementadas na classe Pesquisa, que está no diretório Algorithms.
 
 Busca Sequencial: Percorre todos os elementos da lista até encontrar o item desejado.
@@ -150,9 +131,6 @@ Busca Sequencial: Percorre todos os elementos da lista até encontrar o item des
 Busca Binária: Funciona apenas em listas ordenadas e busca o item dividindo a lista ao meio.
 
 Exemplo de Implementação de Busca Sequencial:
-csharp
-Copiar
-Editar
 public static int BuscaSequencial(List<int> lista, int chave)
 {
     for (int i = 0; i < lista.Count; i++)
@@ -162,12 +140,10 @@ public static int BuscaSequencial(List<int> lista, int chave)
     }
     return -1; // Retorna -1 se o elemento não for encontrado
 }
-5. Exemplo de Saída
+
+### 5. Exemplo de Saída
 O sistema interage com o usuário e, após a escolha de uma operação, retorna a saída correspondente. Por exemplo:
 
-markdown
-Copiar
-Editar
 Escolha uma opção:
 1. Vetores
 2. Matrizes
@@ -177,18 +153,20 @@ Escolha uma opção:
 6. Algoritmos de Pesquisa
 0. Sair
 1
+
 Operações no Vetor:
 1. Inserir Elemento
 2. Remover Elemento
 3. Exibir Elementos
 4. Consultar Elemento
 0. Voltar
+   
 Digite o elemento a ser inserido: 10
 Pressione qualquer tecla para continuar...
-6. Exceções e Validação de Entradas
+
+### 6. Exceções e Validação de Entradas
 Atualmente, o código não realiza validações avançadas sobre entradas erradas, como letras ou caracteres especiais em vez de números inteiros. Idealmente, as entradas devem ser tratadas para evitar falhas de execução, tornando o sistema mais robusto.
 
-Conclusão
+###  7.Conclusão
 Este aplicativo oferece uma interface simples e interativa para o gerenciamento de estruturas de dados em C#, possibilitando ao usuário realizar operações básicas sobre vetores, matrizes, listas, filas e pilhas, além de aplicar algoritmos de pesquisa.
-
 O projeto é uma ferramenta útil para estudar e praticar manipulação de estruturas de dados e algoritmos, podendo ser expandido com mais recursos no futuro.
